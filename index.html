@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAHICO V.155 | GitHub Predictor</title>
+    <style>
+        :root { --ht-blue: #002e5b; --ht-green: #2e7d32; --ht-bg: #f4f4f4; --ht-border: #ccc; --ht-gold: #f9a825; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--ht-bg); margin: 0; padding: 0; color: #333; }
+        .top-nav { background: var(--ht-blue); color: white; padding: 20px 25px; font-weight: bold; font-size: 1.5rem; border-bottom: 4px solid var(--ht-gold); box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .sub-nav { background: #e0e0e0; padding: 8px 25px; font-size: 0.85rem; border-bottom: 1px solid var(--ht-border); color: #666; display: flex; justify-content: space-between; }
+        .container { max-width: 1150px; margin: 15px auto; background: white; border: 1px solid var(--ht-border); box-shadow: 2px 2px 10px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
+        h2 { background: var(--ht-green); color: white; margin: 0; padding: 12px 15px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .scroll-container { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+        th { background: #f8f9fa; padding: 12px 8px; border-bottom: 2px solid var(--ht-green); color: #444; font-weight: bold; }
+        td { padding: 10px 8px; border-bottom: 1px solid #eee; text-align: center; }
+        .name-col { text-align: left; font-weight: bold; padding-left: 20px; color: var(--ht-blue); min-width: 150px; }
+        .pts-total { background: #e8f5e9; font-weight: bold; color: #2e7d32; border-left: 2px solid #c8e6c9; }
+        .controls-bar { background: #f1f3f4; padding: 15px; border-bottom: 1px solid var(--ht-border); display: flex; align-items: center; gap: 10px; }
+        select { padding: 8px 12px; border-radius: 4px; border: 1px solid #ccc; font-weight: bold; outline: none; cursor: pointer; }
+        .match-row { display: grid; grid-template-columns: 1.5fr 0.8fr 3.2fr; align-items: center; padding: 15px; border-bottom: 1px solid #f0f0f0; transition: background 0.2s; }
+        .match-row:hover { background: #fafafa; }
+        .teams { font-weight: 600; color: #222; font-size: 0.95rem; }
+        .score-box { background: #333; color: white; padding: 4px 12px; border-radius: 3px; font-weight: bold; min-width: 45px; display: inline-block; text-align: center; }
+        .pred-grid { display: flex; gap: 8px; justify-content: space-around; }
+        .pred-card { background: #f8f9fa; border: 1px solid #dee2e6; padding: 6px; border-radius: 4px; width: 75px; text-align: center; font-size: 0.75rem; line-height: 1.4; }
+        .pred-card strong { color: var(--ht-blue); display: block; margin-bottom: 2px; border-bottom: 1px solid #eee; }
+        .date-header { background: #fffde7; padding: 8px 15px; font-size: 0.8rem; color: #795548; font-weight: bold; border-bottom: 1px solid #ffe082; }
+        @media (max-width: 768px) { .match-row { grid-template-columns: 1fr; gap: 10px; text-align: center; } .pred-grid { flex-wrap: wrap; justify-content: center; } }
+    </style>
+</head>
+<body>
+
+<div class="top-nav">PAHICO V.155 - SEASON 82</div>
+<div class="sub-nav">
+    <span>Predicții Hattrick Seria V.155</span>
+    <span id="lastUpdate">Actualizat: 30.04.2026</span>
+</div>
+
+<div class="container">
+    <h2>Clasament General Predictori</h2>
+    <div class="scroll-container">
+        <table id="standingsTable">
+            <thead>
+                <tr id="headerRow">
+                    <th>Pos</th>
+                    <th style="text-align:left; padding-left:20px;">Manager</th>
+                </tr>
+            </thead>
+            <tbody id="standingsBody"></tbody>
+        </table>
+    </div>
+
+    <div class="controls-bar">
+        <strong>Selectează Etapa:</strong> 
+        <select id="weekSelect" onchange="renderWeek()"></select>
+    </div>
+
+    <div id="weekTitle"><h2>Rezultate & Predicții Etapă</h2></div>
+    <div id="matchDisplay"></div>
+</div>
+
+<script>
+let appData = {};
+
+async function init() {
+    try {
+        const response = await fetch('date.json');
+        appData = await response.json();
+        
+        createTableHeader();
+        populateWeekSelector();
+        renderStandings();
+        renderWeek();
+    } catch (e) {
+        console.error("Eroare la încărcarea datelor JSON:", e);
+        document.getElementById('matchDisplay').innerHTML = "<p style='padding:20px; color:red;'>Eroare: Nu s-a putut încărca fișierul date.json. Verifică dacă fișierul există în repository.</p>";
+    }
+}
+
+function createTableHeader() {
+    const header = document.getElementById('headerRow');
+    for(let i=1; i<=14; i++) {
+        let th = document.createElement('th');
+        th.innerText = `W${i}`;
+        header.appendChild(th);
+    }
+    let thTot = document.createElement('th');
+    thTot.innerText = "TOT";
+    thTot.className = "pts-total";
+    header.appendChild(thTot);
+}
+
+function populateWeekSelector() {
+    const sel = document.getElementById('weekSelect');
+    const weeks = Object.keys(appData.schedule).map(Number).sort((a,b)=>b-a);
+    for(let i=1; i<=14; i++) {
+        let opt = document.createElement('option');
+        opt.value = i; opt.text = `Etapa ${i}`;
+        sel.add(opt);
+    }
+    sel.value = weeks[0] || 1; // Selectează ultima etapă disponibilă
+}
+
+function renderStandings() {
+    const tbody = document.getElementById('standingsBody');
+    let players = appData.managers.map((name, i) => ({
+        name,
+        scores: appData.pointsData[i],
+        total: appData.pointsData[i].reduce((a, b) => a + b, 0)
+    })).sort((a, b) => b.total - a.total);
+
+    tbody.innerHTML = players.map((p, idx) => `
+        <tr>
+            <td>${idx + 1}</td>
+            <td class="name-col">${p.name}</td>
+            ${p.scores.map(s => `<td>${s || 0}</td>`).join('')}
+            <td class="pts-total">${p.total}</td>
+        </tr>
+    `).join('');
+}
+
+function renderWeek() {
+    const wNum = document.getElementById('weekSelect').value;
+    const week = appData.schedule[wNum] || { date: "TBD", matches: [] };
+    const container = document.getElementById('matchDisplay');
+    
+    let html = `<div class="date-header">📅 DATA ETAPEI: ${week.date}</div>`;
+    
+    if (week.matches.length === 0) {
+        html += `<div style="padding:40px; text-align:center; color:#999;">Meciurile pentru această etapă nu au fost încă încărcate.</div>`;
+    } else {
+        week.matches.forEach(m => {
+            let preds = m.p.map((p, i) => `
+                <div class="pred-card">
+                    <strong>${appData.managers[i].substring(0,6)}</strong>
+                    ${p}
+                </div>
+            `).join('');
+            
+            html += `
+                <div class="match-row">
+                    <div class="teams">${m.t}</div>
+                    <div><span class="score-box">${m.r}</span></div>
+                    <div class="pred-grid">${preds}</div>
+                </div>`;
+        });
+    }
+    container.innerHTML = html;
+}
+
+window.onload = init;
+</script>
+</body>
+</html>
