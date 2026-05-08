@@ -3,171 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAHICO V.155 | Live Dashboard</title>
+    <title>PAHICO V.155</title>
     <style>
-        :root { --ht-blue: #002e5b; --ht-green: #2e7d32; --ht-bg: #f0f2f5; --ht-gold: #f9a825; }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--ht-bg); margin: 0; padding: 0; color: #1c1e21; }
-        .top-nav { background: var(--ht-blue); color: white; padding: 20px 25px; font-weight: bold; font-size: 1.6rem; border-bottom: 4px solid var(--ht-gold); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .sub-nav { background: white; padding: 10px 25px; font-size: 0.85rem; border-bottom: 1px solid #ddd; color: #606770; display: flex; justify-content: space-between; }
-        .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; }
-        .card { background: white; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 20px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-        .card-header { background: var(--ht-green); color: white; padding: 12px 20px; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
-        .table-responsive { overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; min-width: 800px; }
-        th { background: #f5f6f7; padding: 12px 10px; border-bottom: 2px solid #ddd; font-size: 0.8rem; }
-        td { padding: 12px 10px; text-align: center; border-bottom: 1px solid #eee; font-size: 0.9rem; }
-        .name-col { text-align: left; font-weight: bold; color: var(--ht-blue); padding-left: 20px; min-width: 160px; }
-        .pts-total { background: #e7f3ff; font-weight: bold; color: #0056b3; border-left: 1px solid #bbd9f7; }
-        .controls { background: #f5f6f7; padding: 15px 20px; border-bottom: 1px solid #ddd; }
-        select { padding: 8px 12px; border-radius: 5px; border: 1px solid #ccd0d5; font-weight: 600; cursor: pointer; }
-        .match-row { padding: 20px; border-bottom: 1px solid #eee; }
-        .match-main { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .teams { font-weight: bold; font-size: 1.1rem; }
-        .score-box { background: #1c1e21; color: white; padding: 5px 15px; border-radius: 4px; font-family: monospace; font-size: 1.2rem; }
-        .preds-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
-        .pred-box { background: #f0f2f5; padding: 10px; border-radius: 6px; font-size: 0.85rem; border-left: 4px solid #ccd0d5; }
-        .exact { border-left-color: #2e7d32; background: #e8f5e9; }
-        .outcome { border-left-color: #f9a825; background: #fff8e1; }
+        :root { --blue: #002e5b; --green: #2e7d32; --gold: #f9a825; --bg: #f0f2f5; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); margin: 0; padding: 0; }
+        .nav { background: var(--blue); color: white; padding: 20px; font-weight: bold; border-bottom: 4px solid var(--gold); }
+        .container { max-width: 1100px; margin: 20px auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: center; }
+        th { background: #f8f9fa; font-size: 0.8rem; }
+        .name-col { text-align: left; font-weight: bold; color: var(--blue); min-width: 120px; }
+        .total-col { background: #e7f3ff; font-weight: bold; color: #0056b3; }
+        .match-card { border: 1px solid #eee; padding: 15px; margin-bottom: 15px; border-radius: 6px; background: #fff; }
+        .m-header { display: flex; justify-content: space-between; font-weight: bold; margin-bottom: 12px; font-size: 1.1rem; border-bottom: 2px solid #f0f2f5; padding-bottom: 8px; }
+        .score-box { background: #333; color: white; padding: 2px 10px; border-radius: 4px; }
+        .p-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
+        .p-item { font-size: 0.9rem; padding: 8px; border-radius: 4px; background: #f8f9fa; border-left: 4px solid #ccc; }
+        .exact { background: #e8f5e9; border-left-color: var(--green); }
+        .outcome { background: #fff8e1; border-left-color: var(--gold); }
     </style>
 </head>
 <body>
 
-<div class="top-nav">PAHICO V.155 - SEASON 82</div>
-<div class="sub-nav">
-    <span>Sistem: 1p (1X2) + 3p Bonus (Scor Corect)</span>
-    <span id="updateTime">Verificare date: Acum</span>
-</div>
+<div class="nav">PAHICO V.155 - SEASON 82</div>
 
 <div class="container">
-    <div class="card">
-        <div class="card-header">Clasament General</div>
-        <div class="table-responsive">
-            <table id="standingsTable">
-                <thead><tr id="headerRow"><th>Pos</th><th class="name-col">Manager</th></tr></thead>
-                <tbody id="standingsBody"></tbody>
-            </table>
-        </div>
+    <h3>Clasament General</h3>
+    <div style="overflow-x: auto;">
+        <table id="t-standings">
+            <thead><tr id="h-row"><th>Pos</th><th class="name-col">Manager</th></tr></thead>
+            <tbody id="b-standings"></tbody>
+        </table>
     </div>
 
-    <div class="card">
-        <div class="card-header">Detalii Etapa</div>
-        <div class="controls">
-            <strong>Selectează Etapa:</strong>
-            <select id="weekSelect" onchange="renderWeek()"></select>
-        </div>
-        <div id="matchDisplay"></div>
+    <hr style="margin: 40px 0;">
+
+    <h3>Detalii Etapa</h3>
+    <div style="margin-bottom: 20px;">
+        <select id="s-week" onchange="render()" style="padding: 10px; font-weight: bold;"></select>
     </div>
+    <div id="d-matches"></div>
 </div>
 
 <script>
-let appData = {};
-let managerStats = {};
+let data = {};
+let stats = {};
 
-function calculatePoints(real, pred) {
-    if (!real || !pred || pred === "abs" || real === "" || pred === "") return 0;
-    const r = real.replace(/\s/g, '').split('-').map(Number);
-    const p = pred.replace(/\s/g, '').split('-').map(Number);
-    if (r[0] === p[0] && r[1] === p[1]) return 4;
-    const rS = r[0] > r[1] ? 1 : (r[0] < r[1] ? 2 : 0);
-    const pS = p[0] > p[1] ? 1 : (p[0] < p[1] ? 2 : 0);
+function getPts(r, p) {
+    if(!r || !p || p === "abs" || r === "") return 0;
+    const rv = r.split('-').map(Number);
+    const pv = p.split('-').map(Number);
+    if(rv[0] === pv[0] && rv[1] === pv[1]) return 4;
+    const rS = rv[0] > rv[1] ? 1 : (rv[0] < rv[1] ? 2 : 0);
+    const pS = pv[0] > pv[1] ? 1 : (pv[0] < pv[1] ? 2 : 0);
     return rS === pS ? 1 : 0;
 }
 
-async function loadFreshData() {
+async function init() {
     try {
-        // Trucul pentru Cache Busting: adaugam un timestamp la finalul URL-ului
-        const timestamp = new Date().getTime();
-        const response = await fetch(`date.json?v=${timestamp}`, {
-            cache: "no-store" // Spune browserului sa nu stocheze copia locala
+        const r = await fetch(`date.json?v=${Date.now()}`);
+        data = await r.json();
+        
+        data.managers.forEach(m => stats[m] = { w: {}, t: 0 });
+        const weeks = Object.keys(data.schedule).sort((a,b) => a-b);
+        
+        weeks.forEach(wk => {
+            data.managers.forEach(m => stats[m].w[wk] = 0);
+            data.schedule[wk].matches.forEach(match => {
+                data.managers.forEach(m => {
+                    const p = (match.p && match.p[m]) ? match.p[m] : "";
+                    const pts = getPts(match.r, p);
+                    stats[m].w[wk] += pts;
+                    stats[m].t += pts;
+                });
+            });
         });
-        
-        appData = await response.json();
-        
-        runEngine();
-        initUI();
-        
-        document.getElementById('updateTime').innerText = "Ultima actualizare: " + new Date().toLocaleTimeString();
-    } catch (e) {
-        console.error("Eroare:", e);
+
+        const h = document.getElementById('h-row');
+        weeks.forEach(w => {
+            h.innerHTML += `<th>W${w}</th>`;
+            let opt = document.createElement('option');
+            opt.value = w; opt.innerText = `Etapa ${w}`;
+            document.getElementById('s-week').appendChild(opt);
+        });
+        h.innerHTML += `<th class="total-col">TOTAL</th>`;
+
+        const sorted = data.managers.sort((a,b) => stats[b].t - stats[a].t);
+        document.getElementById('b-standings').innerHTML = sorted.map((m, i) => `
+            <tr>
+                <td>${i+1}</td>
+                <td class="name-col">${m}</td>
+                ${weeks.map(w => `<td>${stats[m].w[w]}</td>`).join('')}
+                <td class="total-col">${stats[m].t}</td>
+            </tr>
+        `).join('');
+
+        const played = weeks.filter(w => data.schedule[w].matches.some(m => m.r !== ""));
+        document.getElementById('s-week').value = played.length > 0 ? played[played.length - 1] : "1";
+        render();
+    } catch(e) { 
+        console.error("Eroare JSON:", e);
+        document.body.innerHTML += '<div style="color:red; padding:20px;">Eroare: Verifica virgulele in date.json!</div>';
     }
 }
 
-function runEngine() {
-    managerStats = {};
-    appData.managers.forEach(m => managerStats[m] = { weekly: {}, total: 0 });
-
-    Object.keys(appData.schedule).forEach(wKey => {
-        appData.managers.forEach(m => managerStats[m].weekly[wKey] = 0);
-        appData.schedule[wKey].matches.forEach(match => {
-            appData.managers.forEach(m => {
-                const pred = (match.p && match.p[m]) ? match.p[m] : "";
-                const pts = calculatePoints(match.r, pred);
-                managerStats[m].weekly[wKey] += pts;
-                managerStats[m].total += pts;
-            });
-        });
-    });
-}
-
-function initUI() {
-    const header = document.getElementById('headerRow');
-    const tbody = document.getElementById('standingsBody');
-    const select = document.getElementById('weekSelect');
-    
-    // Curatam UI-ul existent pentru a permite re-randarea la nevoie
-    header.innerHTML = '<th>Pos</th><th class="name-col">Manager</th>';
-    select.innerHTML = '';
-    
-    const weeks = Object.keys(appData.schedule).sort((a,b) => Number(a)-Number(b));
-    
-    weeks.forEach(w => {
-        header.innerHTML += `<th>W${w}</th>`;
-        select.add(new Option(`Etapa ${w}`, w));
-    });
-    header.innerHTML += `<th class="pts-total">TOTAL</th>`;
-
-    const sorted = appData.managers.sort((a,b) => managerStats[b].total - managerStats[a].total);
-    tbody.innerHTML = sorted.map((m, idx) => `
-        <tr>
-            <td>${idx + 1}</td>
-            <td class="name-col">${m}</td>
-            ${weeks.map(w => `<td>${managerStats[m].weekly[w]}</td>`).join('')}
-            <td class="pts-total">${managerStats[m].total}</td>
-        </tr>
-    `).join('');
-
-    const played = weeks.filter(w => appData.schedule[w].matches.some(m => m.r !== ""));
-    select.value = played.length > 0 ? played[played.length - 1] : weeks[0];
-    renderWeek();
-}
-
-function renderWeek() {
-    const w = document.getElementById('weekSelect').value;
-    const matches = appData.schedule[w].matches;
-    const container = document.getElementById('matchDisplay');
-    
-    container.innerHTML = matches.map(m => {
-        const hasScore = m.r && m.r !== "";
+function render() {
+    const wk = document.getElementById('s-week').value;
+    const matches = data.schedule[wk].matches;
+    document.getElementById('d-matches').innerHTML = matches.map(m => {
+        const hasR = m.r && m.r !== "";
         return `
-            <div class="match-row">
-                <div class="match-main">
-                    <span class="teams">${m.t}</span>
-                    <span class="score-box">${hasScore ? m.r : 'VS'}</span>
-                </div>
-                <div class="preds-container">
-                    ${appData.managers.map(mgr => {
-                        const pred = (m.p && m.p[mgr]) ? m.p[mgr] : "-";
-                        const pts = hasScore ? calculatePoints(m.r, pred) : 0;
-                        let cls = (hasScore && pts === 4) ? 'exact' : (hasScore && pts === 1 ? 'outcome' : '');
-                        return `<div class="pred-box ${cls}"><strong>${mgr}:</strong> ${pred} ${hasScore ? `(${pts}p)` : ''}</div>`;
+            <div class="match-card">
+                <div class="m-header"><span>${m.t}</span><span class="score-box">${m.r || 'VS'}</span></div>
+                <div class="p-grid">
+                    ${data.managers.map(mgr => {
+                        const p = (m.p && m.p[mgr]) ? m.p[mgr] : "-";
+                        const pts = hasR ? getPts(m.r, p) : 0;
+                        const cls = pts === 4 ? 'exact' : (pts === 1 ? 'outcome' : '');
+                        return `<div class="p-item ${cls}"><b>${mgr}:</b> ${p} ${hasR ? `(${pts}p)` : ''}</div>`;
                     }).join('')}
                 </div>
             </div>
         `;
     }).join('');
 }
-
-window.onload = loadFreshData;
+window.onload = init;
 </script>
 </body>
 </html>
