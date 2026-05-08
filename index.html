@@ -3,87 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAHICO V.155 | Dashboard Sezon 82</title>
+    <title>PAHICO V.155 | Live Dashboard</title>
     <style>
         :root { --ht-blue: #002e5b; --ht-green: #2e7d32; --ht-bg: #f0f2f5; --ht-gold: #f9a825; }
-        body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: var(--ht-bg); margin: 0; padding: 0; color: #1c1e21; }
-        
-        /* Header */
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--ht-bg); margin: 0; padding: 0; color: #1c1e21; }
         .top-nav { background: var(--ht-blue); color: white; padding: 20px 25px; font-weight: bold; font-size: 1.6rem; border-bottom: 4px solid var(--ht-gold); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         .sub-nav { background: white; padding: 10px 25px; font-size: 0.85rem; border-bottom: 1px solid #ddd; color: #606770; display: flex; justify-content: space-between; }
-
         .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; }
-        
-        /* Sectiune Clasament */
-        .card { background: white; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 1px 2px rgba(0,0,0,0.05); margin-bottom: 20px; overflow: hidden; }
-        .card-header { background: var(--ht-green); color: white; padding: 12px 20px; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.5px; }
-        
+        .card { background: white; border-radius: 8px; border: 1px solid #ddd; margin-bottom: 20px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+        .card-header { background: var(--ht-green); color: white; padding: 12px 20px; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; }
         .table-responsive { overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; min-width: 800px; }
-        th { background: #f5f6f7; padding: 12px 10px; text-align: center; border-bottom: 2px solid #ddd; font-size: 0.8rem; color: #4b4f56; }
+        th { background: #f5f6f7; padding: 12px 10px; border-bottom: 2px solid #ddd; font-size: 0.8rem; }
         td { padding: 12px 10px; text-align: center; border-bottom: 1px solid #eee; font-size: 0.9rem; }
         .name-col { text-align: left; font-weight: bold; color: var(--ht-blue); padding-left: 20px; min-width: 160px; }
         .pts-total { background: #e7f3ff; font-weight: bold; color: #0056b3; border-left: 1px solid #bbd9f7; }
-        
-        /* Sectiune Etape */
-        .controls { background: #f5f6f7; padding: 15px 20px; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: 10px; }
-        select { padding: 8px 12px; border-radius: 5px; border: 1px solid #ccd0d5; font-weight: 600; cursor: pointer; outline: none; }
-
+        .controls { background: #f5f6f7; padding: 15px 20px; border-bottom: 1px solid #ddd; }
+        select { padding: 8px 12px; border-radius: 5px; border: 1px solid #ccd0d5; font-weight: 600; cursor: pointer; }
         .match-row { padding: 20px; border-bottom: 1px solid #eee; }
-        .match-row:last-child { border-bottom: none; }
         .match-main { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .teams { font-weight: bold; font-size: 1.1rem; color: #1c1e21; }
-        .score-box { background: #1c1e21; color: white; padding: 5px 15px; border-radius: 4px; font-family: monospace; font-size: 1.2rem; min-width: 60px; text-align: center; }
-        
+        .teams { font-weight: bold; font-size: 1.1rem; }
+        .score-box { background: #1c1e21; color: white; padding: 5px 15px; border-radius: 4px; font-family: monospace; font-size: 1.2rem; }
         .preds-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; }
-        .pred-box { background: #f0f2f5; padding: 10px; border-radius: 6px; font-size: 0.85rem; border-left: 4px solid #ccd0d5; transition: 0.2s; }
-        
-        /* Culori Punctaj */
-        .exact { border-left-color: #2e7d32; background: #e8f5e9; } /* 4 puncte */
-        .outcome { border-left-color: #f9a825; background: #fff8e1; } /* 1 punct */
-        .exact strong { color: #1b5e20; }
-        .outcome strong { color: #b47b00; }
-        
-        .legend { padding: 10px 20px; font-size: 0.75rem; color: #606770; display: flex; gap: 15px; }
-        .legend-item { display: flex; align-items: center; gap: 5px; }
-        .dot { width: 10px; height: 10px; border-radius: 2px; }
+        .pred-box { background: #f0f2f5; padding: 10px; border-radius: 6px; font-size: 0.85rem; border-left: 4px solid #ccd0d5; }
+        .exact { border-left-color: #2e7d32; background: #e8f5e9; }
+        .outcome { border-left-color: #f9a825; background: #fff8e1; }
     </style>
 </head>
 <body>
 
 <div class="top-nav">PAHICO V.155 - SEASON 82</div>
 <div class="sub-nav">
-    <span>Predictor Hattrick</span>
-    <span>Sistem: 1p (1X2) + 3p Bonus (Scor)</span>
+    <span>Sistem: 1p (1X2) + 3p Bonus (Scor Corect)</span>
+    <span id="updateTime">Verificare date: Acum</span>
 </div>
 
 <div class="container">
     <div class="card">
-        <div class="card-header">Clasament General Predictori</div>
+        <div class="card-header">Clasament General</div>
         <div class="table-responsive">
             <table id="standingsTable">
-                <thead>
-                    <tr id="headerRow">
-                        <th>Pos</th>
-                        <th class="name-col">Manager</th>
-                        </tr>
-                </thead>
+                <thead><tr id="headerRow"><th>Pos</th><th class="name-col">Manager</th></tr></thead>
                 <tbody id="standingsBody"></tbody>
             </table>
         </div>
     </div>
 
     <div class="card">
-        <div class="card-header">Rezultate & Predicții pe Etapă</div>
+        <div class="card-header">Detalii Etapa</div>
         <div class="controls">
-            <strong>Etapa:</strong>
+            <strong>Selectează Etapa:</strong>
             <select id="weekSelect" onchange="renderWeek()"></select>
         </div>
         <div id="matchDisplay"></div>
-        <div class="legend">
-            <div class="legend-item"><div class="dot" style="background:#e8f5e9; border:1px solid #2e7d32"></div> Scor Exact (4p)</div>
-            <div class="legend-item"><div class="dot" style="background:#fff8e1; border:1px solid #f9a825"></div> Rezultat 1X2 (1p)</div>
-        </div>
     </div>
 </div>
 
@@ -91,49 +63,44 @@
 let appData = {};
 let managerStats = {};
 
-// --- FUNCTIA DE CALCUL ---
 function calculatePoints(real, pred) {
-    if (!real || !pred || pred === "abs" || real === "") return 0;
-    
-    // Curatare string-uri (scoatem spatii daca exista)
+    if (!real || !pred || pred === "abs" || real === "" || pred === "") return 0;
     const r = real.replace(/\s/g, '').split('-').map(Number);
     const p = pred.replace(/\s/g, '').split('-').map(Number);
-
-    if (r[0] === p[0] && r[1] === p[1]) return 4; // Scor Exact
-
-    const realSign = r[0] > r[1] ? 1 : (r[0] < r[1] ? 2 : 0);
-    const predSign = p[0] > p[1] ? 1 : (p[0] < p[1] ? 2 : 0);
-
-    if (realSign === predSign) return 1; // 1X2
-    return 0;
+    if (r[0] === p[0] && r[1] === p[1]) return 4;
+    const rS = r[0] > r[1] ? 1 : (r[0] < r[1] ? 2 : 0);
+    const pS = p[0] > p[1] ? 1 : (p[0] < p[1] ? 2 : 0);
+    return rS === pS ? 1 : 0;
 }
 
-async function start() {
+async function loadFreshData() {
     try {
-        const response = await fetch('date.json');
+        // Trucul pentru Cache Busting: adaugam un timestamp la finalul URL-ului
+        const timestamp = new Date().getTime();
+        const response = await fetch(`date.json?v=${timestamp}`, {
+            cache: "no-store" // Spune browserului sa nu stocheze copia locala
+        });
+        
         appData = await response.json();
         
         runEngine();
         initUI();
+        
+        document.getElementById('updateTime').innerText = "Ultima actualizare: " + new Date().toLocaleTimeString();
     } catch (e) {
-        console.error("Eroare la incarcarea datelor:", e);
-        document.getElementById('matchDisplay').innerHTML = "<p style='padding:20px'>Eroare la incarcarea fisierului date.json.</p>";
+        console.error("Eroare:", e);
     }
 }
 
 function runEngine() {
-    // Initalizam obiectul de stats
-    appData.managers.forEach(m => {
-        managerStats[m] = { weekly: {}, total: 0 };
-    });
+    managerStats = {};
+    appData.managers.forEach(m => managerStats[m] = { weekly: {}, total: 0 });
 
-    // Calculam fiecare etapa
     Object.keys(appData.schedule).forEach(wKey => {
         appData.managers.forEach(m => managerStats[m].weekly[wKey] = 0);
-        
         appData.schedule[wKey].matches.forEach(match => {
             appData.managers.forEach(m => {
-                const pred = (match.p && match.p[m]) ? match.p[m] : "abs";
+                const pred = (match.p && match.p[m]) ? match.p[m] : "";
                 const pts = calculatePoints(match.r, pred);
                 managerStats[m].weekly[wKey] += pts;
                 managerStats[m].total += pts;
@@ -143,23 +110,24 @@ function runEngine() {
 }
 
 function initUI() {
-    // 1. Generam Header Tabel (W1...W14)
     const header = document.getElementById('headerRow');
-    const weeks = Object.keys(appData.schedule).sort((a,b) => a-b);
+    const tbody = document.getElementById('standingsBody');
+    const select = document.getElementById('weekSelect');
+    
+    // Curatam UI-ul existent pentru a permite re-randarea la nevoie
+    header.innerHTML = '<th>Pos</th><th class="name-col">Manager</th>';
+    select.innerHTML = '';
+    
+    const weeks = Object.keys(appData.schedule).sort((a,b) => Number(a)-Number(b));
     
     weeks.forEach(w => {
         header.innerHTML += `<th>W${w}</th>`;
-        const opt = document.createElement('option');
-        opt.value = w; opt.text = `Etapa ${w}`;
-        document.getElementById('weekSelect').add(opt);
+        select.add(new Option(`Etapa ${w}`, w));
     });
     header.innerHTML += `<th class="pts-total">TOTAL</th>`;
 
-    // 2. Generam Corp Tabel
-    const sortedManagers = appData.managers.sort((a,b) => managerStats[b].total - managerStats[a].total);
-    const tbody = document.getElementById('standingsBody');
-    
-    tbody.innerHTML = sortedManagers.map((m, idx) => `
+    const sorted = appData.managers.sort((a,b) => managerStats[b].total - managerStats[a].total);
+    tbody.innerHTML = sorted.map((m, idx) => `
         <tr>
             <td>${idx + 1}</td>
             <td class="name-col">${m}</td>
@@ -168,10 +136,8 @@ function initUI() {
         </tr>
     `).join('');
 
-    // 3. Setam ultima etapa jucata in dropdown
-    const playedWeeks = weeks.filter(w => appData.schedule[w].matches.some(m => m.r !== ""));
-    document.getElementById('weekSelect').value = playedWeeks.length > 0 ? playedWeeks[playedWeeks.length - 1] : weeks[0];
-    
+    const played = weeks.filter(w => appData.schedule[w].matches.some(m => m.r !== ""));
+    select.value = played.length > 0 ? played[played.length - 1] : weeks[0];
     renderWeek();
 }
 
@@ -192,15 +158,8 @@ function renderWeek() {
                     ${appData.managers.map(mgr => {
                         const pred = (m.p && m.p[mgr]) ? m.p[mgr] : "-";
                         const pts = hasScore ? calculatePoints(m.r, pred) : 0;
-                        let statusClass = "";
-                        if(hasScore && pts === 4) statusClass = "exact";
-                        if(hasScore && pts === 1) statusClass = "outcome";
-                        
-                        return `
-                            <div class="pred-box ${statusClass}">
-                                <strong>${mgr}:</strong> ${pred} ${hasScore ? `(${pts}p)` : ''}
-                            </div>
-                        `;
+                        let cls = (hasScore && pts === 4) ? 'exact' : (hasScore && pts === 1 ? 'outcome' : '');
+                        return `<div class="pred-box ${cls}"><strong>${mgr}:</strong> ${pred} ${hasScore ? `(${pts}p)` : ''}</div>`;
                     }).join('')}
                 </div>
             </div>
@@ -208,7 +167,7 @@ function renderWeek() {
     }).join('');
 }
 
-window.onload = start;
+window.onload = loadFreshData;
 </script>
 </body>
 </html>
