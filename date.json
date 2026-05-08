@@ -1,5 +1,5 @@
 {
-  "managers": ["Ovidiu", "Joness", "Ticorosu", "SenFerdinand"],
+  "managers": ["Ovidiu", "Joness", "Ticorosu", "SenFerdinand", "Breb_"],
   "schedule": {
     "1": { "date": "04.04.2026", "matches": [
       { "t": "Baloo - Verzele Vesele", "r": "3-2", "p": {"Ovidiu":"3-2", "Joness":"2-2", "Ticorosu":"2-1", "SenFerdinand":"1-2"} },
@@ -28,7 +28,7 @@
     "5": { "date": "02.05.2026", "matches": [
       { "t": "Xplorers_ - Vertex Stars", "r": "1-0", "p": {"Ovidiu":"1-1", "Joness":"2-2", "Ticorosu":"2-0", "SenFerdinand":"3-1", "Breb_":"3-1"} },
       { "t": "Verzele Vesele - Pahtico", "r": "2-4", "p": {"Ovidiu":"5-1", "Joness":"2-1", "Ticorosu":"2-1", "SenFerdinand":"3-1", "Breb_":"3-1"} },
-      { "t": "Baloo - Thule F.C.", "r": "3-1", "p": {"Ovidiu":"1-3", "Joness":"2-1", "Ticorosu":"1-1", "SenFerdinand":"1-0}, "Breb_":"2-1"} },
+      { "t": "Baloo - Thule F.C.", "r": "3-1", "p": {"Ovidiu":"1-3", "Joness":"2-1", "Ticorosu":"1-1", "SenFerdinand":"1-0", "Breb_":"2-1"} },
       { "t": "The Storm - Z'Inq", "r": "3-1", "p": {"Ovidiu":"2-1", "Joness":"1-1", "Ticorosu":"1-1", "SenFerdinand":"0-1", "Breb_":"1-2"} }
     ]},
     "6": { "date": "09.05.2026", "matches": [
