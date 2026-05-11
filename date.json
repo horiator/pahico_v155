@@ -3,8 +3,8 @@
   "schedule": {
     "1": { "date": "04.04.2026", "matches": [
       { "t": "Baloo - Verzele Vesele", "r": "3-2", "p": {"Ovidiu":"3-2", "Joness":"2-2", "Ticorosu":"2-1", "SenFerdinand":"1-2", "Breb_":"abs" } },
-      { "t": "Xplorers_ - The Storm", "r": "2-4", "p": {"Ovidiu":"1-4", "Joness":"1-2", "Ticorosu":"1-1", "SenFerdinand":"2-2"}, "Breb_":"abs" },
-      { "t": "Vertex Stars - Thule F.C.", "r": "0-0", "p": {"Ovidiu":"1-1", "Joness":"1-1", "Ticorosu":"1-0", "SenFerdinand":"2-2"}, "Breb_":"abs" },
+      { "t": "Xplorers_ - The Storm", "r": "2-4", "p": {"Ovidiu":"1-4", "Joness":"1-2", "Ticorosu":"1-1", "SenFerdinand":"2-2", "Breb_":"abs" } },
+      { "t": "Vertex Stars - Thule F.C.", "r": "0-0", "p": {"Ovidiu":"1-1", "Joness":"1-1", "Ticorosu":"1-0", "SenFerdinand":"2-2", "Breb_":"abs" } },
       { "t": "Pahtico - Z'Inq", "r": "1-0", "p": {"Ovidiu":"1-1", "Joness":"1-1", "Ticorosu":"1-2", "SenFerdinand":"1-1", "Breb_":"abs"} }
     ]},
     "2": { "date": "11.04.2026", "matches": [
