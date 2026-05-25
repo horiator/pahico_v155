@@ -2,88 +2,88 @@
   "managers": ["Ovidiu", "Joness", "Ticorosu", "SenFerdinand", "Breb_"],
   "schedule": {
     "1": { "date": "04.04.2026", "matches": [
-      { "t": "Baloo - Verzele Vesele", "r": "3-2",            "p": {"Ovidiu":"3-2", "Joness":"2-2", "Ticorosu":"2-1", "SenFerdinand":"1-2", "Breb_":"abs" } },
-      { "t": "Xplorers_ - The Storm", "r": "2-4",             "p": {"Ovidiu":"1-4", "Joness":"1-2", "Ticorosu":"1-1", "SenFerdinand":"2-2", "Breb_":"abs" } },
-      { "t": "Vertex Stars - Thule F.C.", "r": "0-0",         "p": {"Ovidiu":"1-1", "Joness":"1-1", "Ticorosu":"1-0", "SenFerdinand":"2-2", "Breb_":"abs" } },
-      { "t": "Pahtico - Z'Inq", "r": "1-0",                   "p": {"Ovidiu":"1-1", "Joness":"1-1", "Ticorosu":"1-2", "SenFerdinand":"1-1", "Breb_":"abs"} }
+      { "t": "Baloo - Verzele Vesele",           "r": "3-2",      "p": {"Ovidiu":"3-2", "Joness":"2-2", "Ticorosu":"2-1", "SenFerdinand":"1-2", "Breb_":"abs" } },
+      { "t": "Xplorers_ - The Storm",            "r": "2-4",      "p": {"Ovidiu":"1-4", "Joness":"1-2", "Ticorosu":"1-1", "SenFerdinand":"2-2", "Breb_":"abs" } },
+      { "t": "Vertex Stars - Thule F.C.",        "r": "0-0",      "p": {"Ovidiu":"1-1", "Joness":"1-1", "Ticorosu":"1-0", "SenFerdinand":"2-2", "Breb_":"abs" } },
+      { "t": "Pahtico - Z'Inq",                  "r": "1-0",      "p": {"Ovidiu":"1-1", "Joness":"1-1", "Ticorosu":"1-2", "SenFerdinand":"1-1", "Breb_":"abs"} }
     ]},
     "2": { "date": "11.04.2026", "matches": [
-      { "t": "Verzele Vesele - Xplorers_", "r": "5-1",        "p": {"Ovidiu":"3-1", "Joness":"1-1", "Ticorosu":"abs", "SenFerdinand":"1-2", "Breb_":"abs"} },
-      { "t": "The Storm - Vertex Stars", "r": "5-0",          "p": {"Ovidiu":"5-0", "Joness":"3-0", "Ticorosu":"abs", "SenFerdinand":"4-1", "Breb_":"abs"} },
-      { "t": "Z'Inq - Baloo", "r": "3-0",                     "p": {"Ovidiu":"1-2", "Joness":"1-1", "Ticorosu":"abs", "SenFerdinand":"1-1", "Breb_":"abs"} },
-      { "t": "Thule F.C. - Pahtico", "r": "3-1",              "p": {"Ovidiu":"2-2", "Joness":"0-2", "Ticorosu":"abs", "SenFerdinand":"0-2", "Breb_":"abs"} }
+      { "t": "Verzele Vesele - Xplorers_",       "r": "5-1",      "p": {"Ovidiu":"3-1", "Joness":"1-1", "Ticorosu":"abs", "SenFerdinand":"1-2", "Breb_":"abs"} },
+      { "t": "The Storm - Vertex Stars",         "r": "5-0",      "p": {"Ovidiu":"5-0", "Joness":"3-0", "Ticorosu":"abs", "SenFerdinand":"4-1", "Breb_":"abs"} },
+      { "t": "Z'Inq - Baloo",                    "r": "3-0",      "p": {"Ovidiu":"1-2", "Joness":"1-1", "Ticorosu":"abs", "SenFerdinand":"1-1", "Breb_":"abs"} },
+      { "t": "Thule F.C. - Pahtico",             "r": "3-1",      "p": {"Ovidiu":"2-2", "Joness":"0-2", "Ticorosu":"abs", "SenFerdinand":"0-2", "Breb_":"abs"} }
     ]},
     "3": { "date": "18.04.2026", "matches": [
-      { "t": "Xplorers_ - Thule F.C.", "r": "2-3",            "p": {"Ovidiu":"1-3", "Joness":"3-3", "Ticorosu":"1-1", "SenFerdinand":"2-1", "Breb_":"abs"} },
-      { "t": "Baloo - Pahtico", "r": "1-0",                   "p": {"Ovidiu":"1-1", "Joness":"1-1", "Ticorosu":"3-1", "SenFerdinand":"2-2", "Breb_":"abs"} },
-      { "t": "Verzele Vesele - The Storm", "r": "6-3",        "p": {"Ovidiu":"2-5", "Joness":"1-3", "Ticorosu":"1-2", "SenFerdinand":"2-2", "Breb_":"abs"} },
-      { "t": "Vertex Stars - Z'Inq", "r": "0-3",              "p": {"Ovidiu":"0-2", "Joness":"0-1", "Ticorosu":"0-3", "SenFerdinand":"1-4", "Breb_":"abs"} }
+      { "t": "Xplorers_ - Thule F.C.",           "r": "2-3",      "p": {"Ovidiu":"1-3", "Joness":"3-3", "Ticorosu":"1-1", "SenFerdinand":"2-1", "Breb_":"abs"} },
+      { "t": "Baloo - Pahtico",                  "r": "1-0",      "p": {"Ovidiu":"1-1", "Joness":"1-1", "Ticorosu":"3-1", "SenFerdinand":"2-2", "Breb_":"abs"} },
+      { "t": "Verzele Vesele - The Storm",       "r": "6-3",      "p": {"Ovidiu":"2-5", "Joness":"1-3", "Ticorosu":"1-2", "SenFerdinand":"2-2", "Breb_":"abs"} },
+      { "t": "Vertex Stars - Z'Inq",             "r": "0-3",      "p": {"Ovidiu":"0-2", "Joness":"0-1", "Ticorosu":"0-3", "SenFerdinand":"1-4", "Breb_":"abs"} }
     ]},
     "4": { "date": "25.04.2026", "matches": [
-      { "t": "The Storm - Baloo", "r": "2-6",                 "p": {"Ovidiu":"abs", "Joness":"2-1", "Ticorosu":"1-1", "SenFerdinand":"2-1", "Breb_":"abs"} },
-      { "t": "Z'Inq - Xplorers_", "r": "0-0",                 "p": {"Ovidiu":"abs", "Joness":"3-1", "Ticorosu":"1-0", "SenFerdinand":"2-2", "Breb_":"abs"} },
-      { "t": "Thule F.C. - Verzele Vesele", "r": "1-2",       "p": {"Ovidiu":"abs", "Joness":"1-2", "Ticorosu":"2-1", "SenFerdinand":"2-2", "Breb_":"abs"} },
-      { "t": "Pahtico - Vertex Stars", "r": "1-1",            "p": {"Ovidiu":"abs", "Joness":"2-0", "Ticorosu":"2-1", "SenFerdinand":"3-1", "Breb_":"abs"} }
+      { "t": "The Storm - Baloo",                "r": "2-6",      "p": {"Ovidiu":"abs", "Joness":"2-1", "Ticorosu":"1-1", "SenFerdinand":"2-1", "Breb_":"abs"} },
+      { "t": "Z'Inq - Xplorers_",                "r": "0-0",      "p": {"Ovidiu":"abs", "Joness":"3-1", "Ticorosu":"1-0", "SenFerdinand":"2-2", "Breb_":"abs"} },
+      { "t": "Thule F.C. - Verzele Vesele",      "r": "1-2",      "p": {"Ovidiu":"abs", "Joness":"1-2", "Ticorosu":"2-1", "SenFerdinand":"2-2", "Breb_":"abs"} },
+      { "t": "Pahtico - Vertex Stars",           "r": "1-1",      "p": {"Ovidiu":"abs", "Joness":"2-0", "Ticorosu":"2-1", "SenFerdinand":"3-1", "Breb_":"abs"} }
     ]},
     "5": { "date": "02.05.2026", "matches": [
-      { "t": "Xplorers_ - Vertex Stars", "r": "1-0",          "p": {"Ovidiu":"1-1", "Joness":"2-2", "Ticorosu":"2-0", "SenFerdinand":"3-1", "Breb_":"3-1"} },
-      { "t": "Verzele Vesele - Pahtico", "r": "2-4",          "p": {"Ovidiu":"5-1", "Joness":"2-1", "Ticorosu":"2-1", "SenFerdinand":"3-1", "Breb_":"3-1"} },
-      { "t": "Baloo - Thule F.C.", "r": "3-1",                "p": {"Ovidiu":"1-3", "Joness":"2-1", "Ticorosu":"1-1", "SenFerdinand":"1-0", "Breb_":"2-1"} },
-      { "t": "The Storm - Z'Inq", "r": "3-1",                 "p": {"Ovidiu":"2-1", "Joness":"1-1", "Ticorosu":"1-1", "SenFerdinand":"0-1", "Breb_":"1-2"} }
+      { "t": "Xplorers_ - Vertex Stars",         "r": "1-0",      "p": {"Ovidiu":"1-1", "Joness":"2-2", "Ticorosu":"2-0", "SenFerdinand":"3-1", "Breb_":"3-1"} },
+      { "t": "Verzele Vesele - Pahtico",         "r": "2-4",      "p": {"Ovidiu":"5-1", "Joness":"2-1", "Ticorosu":"2-1", "SenFerdinand":"3-1", "Breb_":"3-1"} },
+      { "t": "Baloo - Thule F.C.",               "r": "3-1",      "p": {"Ovidiu":"1-3", "Joness":"2-1", "Ticorosu":"1-1", "SenFerdinand":"1-0", "Breb_":"2-1"} },
+      { "t": "The Storm - Z'Inq",                "r": "3-1",      "p": {"Ovidiu":"2-1", "Joness":"1-1", "Ticorosu":"1-1", "SenFerdinand":"0-1", "Breb_":"1-2"} }
     ]},
     "6": { "date": "09.05.2026", "matches": [
-      { "t": "Pahtico - Xplorers_", "r": "0-0",               "p": {"Ovidiu":"4-1", "Joness":"1-1", "Ticorosu":"1-1", "SenFerdinand":"1-2", "Breb_":"abs"} },
-      { "t": "Vertex Stars - Baloo", "r": "0-4",              "p": {"Ovidiu":"1-4", "Joness":"0-3", "Ticorosu":"0-5", "SenFerdinand":"0-4", "Breb_":"abs"} },
-      { "t": "Z'Inq - Verzele Vesele", "r": "1-2",            "p": {"Ovidiu":"2-0", "Joness":"1-1", "Ticorosu":"0-0", "SenFerdinand":"1-1", "Breb_":"abs"} },
-      { "t": "Thule F.C. - The Storm", "r": "1-2",            "p": {"Ovidiu":"2-2", "Joness":"1-3", "Ticorosu":"2-2", "SenFerdinand":"1-2", "Breb_":"abs"} }
+      { "t": "Pahtico - Xplorers_",              "r": "0-0",      "p": {"Ovidiu":"4-1", "Joness":"1-1", "Ticorosu":"1-1", "SenFerdinand":"1-2", "Breb_":"abs"} },
+      { "t": "Vertex Stars - Baloo",             "r": "0-4",      "p": {"Ovidiu":"1-4", "Joness":"0-3", "Ticorosu":"0-5", "SenFerdinand":"0-4", "Breb_":"abs"} },
+      { "t": "Z'Inq - Verzele Vesele",           "r": "1-2",      "p": {"Ovidiu":"2-0", "Joness":"1-1", "Ticorosu":"0-0", "SenFerdinand":"1-1", "Breb_":"abs"} },
+      { "t": "Thule F.C. - The Storm",           "r": "1-2",      "p": {"Ovidiu":"2-2", "Joness":"1-3", "Ticorosu":"2-2", "SenFerdinand":"1-2", "Breb_":"abs"} }
     ]},
     "7": { "date": "16.05.2026", "matches": [
-      { "t": "Xplorers_ - Baloo", "r": "1-1",                 "p": {"Ovidiu":"0-3", "Joness":"1-2", "Ticorosu":"1-1", "SenFerdinand":"1-1", "Breb_":"1-3"} },
-      { "t": "The Storm - Pahtico", "r": "3-1",               "p": {"Ovidiu":"3-0", "Joness":"2-1", "Ticorosu":"3-2", "SenFerdinand":"2-2", "Breb_":"3-3"} },
-      { "t": "Verzele Vesele - Vertex Stars", "r": "3-0",     "p": {"Ovidiu":"3-0", "Joness":"3-1", "Ticorosu":"4-0", "SenFerdinand":"5-0", "Breb_":"2-0"} },
-      { "t": "Z'Inq - Thule F.C.", "r": "1-0",                "p": {"Ovidiu":"0-3", "Joness":"1-0", "Ticorosu":"2-0", "SenFerdinand":"4-1", "Breb_":"2-1"} }
+      { "t": "Xplorers_ - Baloo",                "r": "1-1",      "p": {"Ovidiu":"0-3", "Joness":"1-2", "Ticorosu":"1-1", "SenFerdinand":"1-1", "Breb_":"1-3"} },
+      { "t": "The Storm - Pahtico",              "r": "3-1",      "p": {"Ovidiu":"3-0", "Joness":"2-1", "Ticorosu":"3-2", "SenFerdinand":"2-2", "Breb_":"3-3"} },
+      { "t": "Verzele Vesele - Vertex Stars",    "r": "3-0",      "p": {"Ovidiu":"3-0", "Joness":"3-1", "Ticorosu":"4-0", "SenFerdinand":"5-0", "Breb_":"2-0"} },
+      { "t": "Z'Inq - Thule F.C.",               "r": "1-0",      "p": {"Ovidiu":"0-3", "Joness":"1-0", "Ticorosu":"2-0", "SenFerdinand":"4-1", "Breb_":"2-1"} }
     ]},
     "8": { "date": "23.05.2026", "matches": [
-      { "t": "Thule F.C. - Z'Inq", "r": "0-2",                "p": {"Ovidiu":"2-0", "Joness":"2-1", "Ticorosu":"1-2", "SenFerdinand":"0-0", "Breb_":"abs"} },
-      { "t": "Vertex Stars - Verzele Vesele", "r": "0-3",     "p": {"Ovidiu":"0-2", "Joness":"0-4", "Ticorosu":"0-4", "SenFerdinand":"0-3", "Breb_":"abs"} },
-      { "t": "Pahtico - The Storm", "r": "2-3",               "p": {"Ovidiu":"0-2", "Joness":"1-1", "Ticorosu":"0-0", "SenFerdinand":"2-1", "Breb_":"abs"} },
-      { "t": "Baloo - Xplorers_", "r": "4-0",                 "p": {"Ovidiu":"2-0", "Joness":"4-1", "Ticorosu":"1-0", "SenFerdinand":"2-2", "Breb_":"abs"} }
+      { "t": "Thule F.C. - Z'Inq",                "r": "0-2",    "p": {"Ovidiu":"2-0", "Joness":"2-1", "Ticorosu":"1-2", "SenFerdinand":"0-0", "Breb_":"abs"} },
+      { "t": "Vertex Stars - Verzele Vesele",     "r": "0-3",    "p": {"Ovidiu":"0-2", "Joness":"0-4", "Ticorosu":"0-4", "SenFerdinand":"0-3", "Breb_":"abs"} },
+      { "t": "Pahtico - The Storm",               "r": "2-3",    "p": {"Ovidiu":"0-2", "Joness":"1-1", "Ticorosu":"0-0", "SenFerdinand":"2-1", "Breb_":"abs"} },
+      { "t": "Baloo - Xplorers_",                 "r": "4-0",    "p": {"Ovidiu":"2-0", "Joness":"4-1", "Ticorosu":"1-0", "SenFerdinand":"2-2", "Breb_":"abs"} }
     ]},
     "9": { "date": "30.05.2026", "matches": [
-      { "t": "The Storm - Thule F.C.", "r": "",               "p": {} },
-      { "t": "Verzele Vesele - Z'Inq", "r": "",               "p": {} },
-      { "t": "Baloo - Vertex Stars", "r": "",                 "p": {} },
-      { "t": "Xplorers_ - Pahtico", "r": "",                  "p": {} }
+      { "t": "The Storm - Thule F.C.",           "r": "",      "p": {} },
+      { "t": "Verzele Vesele - Z'Inq",           "r": "",      "p": {} },
+      { "t": "Baloo - Vertex Stars",             "r": "",      "p": {} },
+      { "t": "Xplorers_ - Pahtico",              "r": "",      "p": {} }
     ]},
     "10": { "date": "06.06.2026", "matches": [
-      { "t": "Z'Inq - The Storm", "r": "", "p": {} },
-      { "t": "Thule F.C. - Baloo", "r": "", "p": {} },
-      { "t": "Pahtico - Verzele Vesele", "r": "", "p": {} },
-      { "t": "Vertex Stars - Xplorers_", "r": "", "p": {} }
+      { "t": "Z'Inq - The Storm",                "r": "",      "p": {} },
+      { "t": "Thule F.C. - Baloo",               "r": "",      "p": {} },
+      { "t": "Pahtico - Verzele Vesele",         "r": "",      "p": {} },
+      { "t": "Vertex Stars - Xplorers_",         "r": "",      "p": {} }
     ]},
     "11": { "date": "13.06.2026", "matches": [
-      { "t": "Vertex Stars - Pahtico", "r": "", "p": {} },
-      { "t": "Baloo - The Storm", "r": "", "p": {} },
-      { "t": "Verzele Vesele - Thule F.C.", "r": "", "p": {} },
-      { "t": "Xplorers_ - Z'Inq", "r": "", "p": {} }
+      { "t": "Vertex Stars - Pahtico",           "r": "",      "p": {} },
+      { "t": "Baloo - The Storm",                "r": "",      "p": {} },
+      { "t": "Verzele Vesele - Thule F.C.",      "r": "",      "p": {} },
+      { "t": "Xplorers_ - Z'Inq",                "r": "",      "p": {} }
     ]},
     "12": { "date": "20.06.2026", "matches": [
-      { "t": "Z'Inq - Vertex Stars", "r": "", "p": {} },
-      { "t": "The Storm - Verzele Vesele", "r": "", "p": {} },
-      { "t": "Pahtico - Baloo", "r": "", "p": {} },
-      { "t": "Thule F.C. - Xplorers_", "r": "", "p": {} }
+      { "t": "Z'Inq - Vertex Stars",             "r": "",      "p": {} },
+      { "t": "The Storm - Verzele Vesele",       "r": "",      "p": {} },
+      { "t": "Pahtico - Baloo",                  "r": "",      "p": {} },
+      { "t": "Thule F.C. - Xplorers_",           "r": "",      "p": {} }
     ]},
     "13": { "date": "27.06.2026", "matches": [
-      { "t": "Pahtico - Thule F.C.", "r": "", "p": {} },
-      { "t": "Baloo - Z'Inq", "r": "", "p": {} },
-      { "t": "Xplorers_ - Verzele Vesele", "r": "", "p": {} },
-      { "t": "Vertex Stars - The Storm", "r": "", "p": {} }
+      { "t": "Pahtico - Thule F.C.",             "r": "",      "p": {} },
+      { "t": "Baloo - Z'Inq",                    "r": "",      "p": {} },
+      { "t": "Xplorers_ - Verzele Vesele",       "r": "",      "p": {} },
+      { "t": "Vertex Stars - The Storm",         "r": "",      "p": {} }
     ]},
     "14": { "date": "04.07.2026", "matches": [
-      { "t": "Thule F.C. - Vertex Stars", "r": "", "p": {} },
-      { "t": "Z'Inq - Pahtico", "r": "", "p": {} },
-      { "t": "Verzele Vesele - Baloo", "r": "", "p": {} },
-      { "t": "The Storm - Xplorers_", "r": "", "p": {} }
+      { "t": "Thule F.C. - Vertex Stars",        "r": "",      "p": {} },
+      { "t": "Z'Inq - Pahtico",                  "r": "",      "p": {} },
+      { "t": "Verzele Vesele - Baloo",           "r": "",      "p": {} },
+      { "t": "The Storm - Xplorers_",            "r": "",      "p": {} }
     ]}
   }
 }
