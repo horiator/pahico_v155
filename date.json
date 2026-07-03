@@ -74,10 +74,10 @@
       { "t": "Thule F.C. - Xplorers_",           "r": "1-1",      "p": {"Ovidiu":"abs", "Joness":"2-0", "Ticorosu":"abs", "SenFerdinand":"2-1", "Breb_":"abs"} }
     ]},
     "13": { "date": "27.06.2026", "matches": [
-      { "t": "Pahtico - Thule F.C.",             "r": "",      "p": {} },
-      { "t": "Baloo - Z'Inq",                    "r": "",      "p": {} },
-      { "t": "Xplorers_ - Verzele Vesele",       "r": "",      "p": {} },
-      { "t": "Vertex Stars - The Storm",         "r": "",      "p": {} }
+      { "t": "Pahtico - Thule F.C.",             "r": "2-1",      "p": {"Ovidiu":"abs", "Joness":"3-0", "Ticorosu":"2-1", "SenFerdinand":"3-1", "Breb_":"abs"} },
+      { "t": "Baloo - Z'Inq",                    "r": "2-0",      "p": {"Ovidiu":"abs", "Joness":"1-0", "Ticorosu":"0-0", "SenFerdinand":"1-1", "Breb_":"abs"} },
+      { "t": "Xplorers_ - Verzele Vesele",       "r": "2-3",      "p": {"Ovidiu":"abs", "Joness":"2-5", "Ticorosu":"2-3", "SenFerdinand":"1-3", "Breb_":"abs"} },
+      { "t": "Vertex Stars - The Storm",         "r": "3-4",      "p": {"Ovidiu":"abs", "Joness":"0-4", "Ticorosu":"0-5", "SenFerdinand":"0-4", "Breb_":"abs"} }
     ]},
     "14": { "date": "04.07.2026", "matches": [
       { "t": "Thule F.C. - Vertex Stars",        "r": "",      "p": {} },
